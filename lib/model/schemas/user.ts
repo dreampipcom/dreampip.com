@@ -1,27 +1,13 @@
-// user.ts
+// nexus/user.ts
 /* schemas */
-import type { IFuzzyAbilities, UserDecoration, INCharacter, DUserOrgAmbiRelation } from '@types';
-import { EUserOrgRoles, EAbilityStatus } from '@constants';
-import { defaultRMActions } from '@schema/org';
+import type { UserDecoration, INCharacter, DUserOrgAmbiRelation } from '@types';
 
-/* to finish, use hashmap */
-export const defaultAbilities: IFuzzyAbilities = [
-  {
-    name: 'like-stuff',
-    contexts: ['all'],
-    actions: defaultRMActions,
-    roles: [EUserOrgRoles.EVERYONE],
-    restrictions: {},
-    allowances: {},
-    status: EAbilityStatus.active,
-  },
-];
-
-export const _UserSchema: UserDecoration = {
+export const UserSchema: UserDecoration = {
   rickmorty: {
     favorites: {
       characters: [] as INCharacter['id'][],
     },
   },
+  /* let's make this a hashmap too! */
   organizations: [] as DUserOrgAmbiRelation[],
 };
